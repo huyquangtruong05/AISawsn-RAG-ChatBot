@@ -208,7 +208,7 @@ ollama --version
 ## 📦 Installation & Setup
 ### 1. Clone the repository
 ```
-git clone https://github.com/huyquangtruong05/AISawsn-RAG-ChatBot.git
+git clone [https://github.com/huyquangtruong05/AISawsn-RAG-ChatBot.git](https://github.com/huyquangtruong05/AISawsn-RAG-ChatBot.git)
 cd AISawsn-RAG-ChatBot
 ```
 
