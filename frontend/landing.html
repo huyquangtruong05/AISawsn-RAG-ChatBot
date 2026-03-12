@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISawsn Platform</title>
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/landing.css">
+</head>
+
+<body>
+    <div class="bg-glow glow-top-left"></div>
+    <div class="bg-glow glow-bottom-right"></div>
+
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="../img/logo.png" alt="Logo AI" class="header-logo">
+                AISawsn
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#preview">Preview</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-text open-login">Login</a>
+                <a href="#" class="btn btn-primary open-signup">Get Started</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="auth-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-header">
+                <h3 id="modal-title">Welcome Back</h3>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form id="auth-form">
+                    <div class="input-group signup-only" style="display: none;">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 glow-effect" id="auth-submit-btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <header id="home" class="hero section">
+        <div class="container hero-container reveal">
+            <div class="badge">✨ Introducing the next generation AI</div>
+            <h1 class="hero-title">Build Smarter Conversations with AI</h1>
+            <p class="hero-desc">Empower your business with cutting-edge natural language processing. Deploy custom
+                chatbots in minutes, integrate seamlessly via API, and scale your customer support infinitely.</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary btn-large glow-effect">Start Building Free</a>
+                <a href="#preview" class="btn btn-secondary btn-large">View Documentation</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="trusted-by section reveal">
+        <div class="container">
+            <p class="trusted-title">TRUSTED BY INNOVATIVE TEAMS WORLDWIDE</p>
+            <div class="logo-grid">
+                <i class="fa-brands fa-stripe"></i>
+                <i class="fa-brands fa-aws"></i>
+                <i class="fa-brands fa-digital-ocean"></i>
+                <i class="fa-brands fa-discord"></i>
+                <i class="fa-brands fa-figma"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Supercharge your workflow</h2>
+                <p>Everything you need to build, train, and deploy intelligent conversational agents.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Smart AI responses</h3>
+                    <p>Powered by the latest LLMs to deliver context-aware, human-like responses in real-time.</p>
+                </div>
+                <div class="feature-card glass-card reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Fast API integration</h3>
+                    <p>Connect your existing tools with our robust REST and GraphQL APIs in under 5 minutes.</p>
+                </div>
+                <div class="feature-card glass-card reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Secure data processing</h3>
+                    <p>Enterprise-grade security with end-to-end encryption. Your data is never used to train public
+                        models.</p>
+                </div>
+                <div class="feature-card glass-card reveal">
+                    <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Custom chatbot training</h3>
+                    <p>Upload your own documents and knowledge bases to fine-tune the AI specifically for your brand.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preview" class="preview section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience the Interface</h2>
+                <p>Familiar, intuitive, and designed for maximum productivity.</p>
+            </div>
+            <div class="mockup-container glass-card">
+                <div class="mockup-header">
+                    <div class="window-controls">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="mockup-title">AISawsn</div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-chat">
+                        <div class="mockup-msg ai">
+                            <img src="../img/logo.png" alt="AI Avatar" class="avatar">
+                            <div class="msg-bubble">Hello! I'm your AI virtual assistant. How can I help you today?
+                            </div>
+                        </div>
+                        <div class="mockup-msg user">
+                            <div class="msg-bubble">Write a short function to calculate fibonacci in Python.</div>
+                        </div>
+                        <div class="mockup-msg ai">
+                            <img src="../img/logo.png" alt="AI Avatar" class="avatar">
+                            <div class="msg-bubble">
+                                <p>Sure, here is a simple recursive function in Python:</p>
+                                <div class="code-block">
+                                    def fibonacci(n):<br>&nbsp;&nbsp;if n <= 1: return n<br>&nbsp;&nbsp;return
+                                        fibonacci(n-1) + fibonacci(n-2)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-input">
+                        <input type="text" placeholder="Type your message..." readonly>
+                        <button><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats section reveal">
+        <div class="container">
+            <div class="stats-grid glass-card">
+                <div class="stat-item">
+                    <h3 class="stat-number">10K+</h3>
+                    <p class="stat-label">Active Users</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">99.9%</h3>
+                    <p class="stat-label">Guaranteed Uptime</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">1M+</h3>
+                    <p class="stat-label">Messages Processed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Simple, transparent pricing</h2>
+                <p>Start for free, upgrade when you need more power.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card glass-card reveal">
+                    <h3>Starter</h3>
+                    <div class="price"><span>$</span>0<span>/mo</span></div>
+                    <p class="price-desc">Perfect for side projects and testing.</p>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> 1,000 messages/mo</li>
+                        <li><i class="fa-solid fa-check"></i> Standard AI models</li>
+                        <li><i class="fa-solid fa-check"></i> Community support</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary w-100">Get Started</a>
+                </div>
+                <div class="price-card glass-card pro-plan reveal">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>Pro</h3>
+                    <div class="price"><span>$</span>29<span>/mo</span></div>
+                    <p class="price-desc">For professionals and growing teams.</p>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> 50,000 messages/mo</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced models (GPT-4)</li>
+                        <li><i class="fa-solid fa-check"></i> Custom API integration</li>
+                        <li><i class="fa-solid fa-check"></i> Priority email support</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary w-100 glow-effect">Upgrade to Pro</a>
+                </div>
+                <div class="price-card glass-card reveal">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <p class="price-desc">Dedicated support and infrastructure.</p>
+                    <ul class="price-features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited messages</li>
+                        <li><i class="fa-solid fa-check"></i> Fine-tuned custom models</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+                        <li><i class="fa-solid fa-check"></i> SLA & Advanced Security</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary w-100">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Loved by developers</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card reveal">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review">"The API integration took literally 5 minutes. The response times are incredibly
+                        fast, and the dashboard is beautiful. Highly recommend for any SaaS."</p>
+                    <div class="user-info">
+                        <div class="avatar-placeholder">S</div>
+                        <div>
+                            <h4>Sarah Jenkins</h4>
+                            <span>CTO at TechFlow</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card reveal">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i></div>
+                    <p class="review">"We transitioned from our in-house bot to this platform and saw a 40% increase in
+                        customer satisfaction scores overnight. The custom training is a game changer."</p>
+                    <div class="user-info">
+                        <div class="avatar-placeholder">M</div>
+                        <div>
+                            <h4>Marcus Chen</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card reveal">
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star-half-stroke"></i></div>
+                    <p class="review">"The dark mode UI is gorgeous, exactly what developers want to look at. Plus, the
+                        latency is almost non-existent compared to other providers."</p>
+                    <div class="user-info">
+                        <div class="avatar-placeholder">E</div>
+                        <div>
+                            <h4>Elena Rodriguez</h4>
+                            <span>Lead Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq section reveal">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently asked questions</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>How does the custom model training work?</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can upload your company documentation, past support tickets, or website URLs. Our system
+                            processes this data to contextually train the AI, ensuring it answers specific questions
+                            about your business accurately.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Can I integrate this with my existing web app?</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide easy-to-use SDKs for React, Vue, Python, and Node.js, along with a standard
+                            REST API that can be integrated into any tech stack.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <div class="faq-question">
+                        <h3>Is my data secure?</h3>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use AES-256 encryption at rest and TLS 1.3 in transit. We are SOC2 compliant,
+                            and your proprietary data is never used to train global public models.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta section reveal">
+        <div class="container">
+            <div class="cta-box glass-card">
+                <h2>Ready to build smarter conversations?</h2>
+                <p>Join over 10,000 developers building the future of AI communication.</p>
+                <div class="cta-actions">
+                    <a href="#pricing" class="btn btn-primary btn-large glow-effect">Get Started for Free</a>
+                    <a href="#contact" class="btn btn-secondary btn-large">Talk to Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="../img/logo.png" alt="Logo AI" class="header-logo">
+                        AISawsn
+                    </a>
+                    <p>Building the infrastructure for the next generation of conversational AI.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-discord"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AISawsn Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/landing.js"></script>
+</body>
+
+</html>

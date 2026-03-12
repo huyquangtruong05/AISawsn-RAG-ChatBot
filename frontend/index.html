@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISawsn Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-glow glow-top-left"></div>
+    <div class="bg-glow glow-bottom-right"></div>
+
+    <nav class="app-navbar">
+        <div class="nav-container">
+            <a href="landing.html" class="logo">
+                <img src="../img/logo.png" alt="Logo AI" class="header-logo">
+                AISawsn
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="landing.html#home">Home</a></li>
+                <li><a href="landing.html#features">Features</a></li>
+                <li><a href="landing.html#preview">Preview</a></li>
+                <li><a href="landing.html#pricing">Pricing</a></li>
+                <li><a href="landing.html#faq">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <span class="user-greeting">Hello, <strong>Huy</strong></span>
+                <button id="logout-btn" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>
+                <img src="../img/logo.png" alt="Logo AI" class="header-logo">
+                AISawsn Assistant
+            </h2>
+            <span class="status">Online</span>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            <div class="message ai-message">
+                <div class="message-content">
+                    Hello! I'm your AI virtual assistant. How can I help you today?
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn..." autocomplete="off">
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

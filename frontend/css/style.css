@@ -1,0 +1,372 @@
+/* Reset cơ bản */
+:root {
+  --primary-color: #0b5cff;
+  --secondary-color: #4daaf9;
+}
+html {
+  scroll-behavior: smooth;
+  /* Giúp dành sẵn khoảng trống cho thanh cuộn, tránh xê dịch layout */
+  scrollbar-gutter: stable;
+  /* Đảm bảo chiều cao luôn đủ để kích hoạt thanh cuộn (phòng hờ) */
+  overflow-y: scroll;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* body {
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 70px;
+} */
+
+body {
+  background-color: #121212;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 450px;
+  height: calc(
+    100vh - 120px
+  ); /* Tự động tính chiều cao để không bị tràn màn hình */
+  background-color: #1e1e1e;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Đảm bảo các phần tử con không tràn ra ngoài */
+  margin: 0 auto 20px auto; /* Căn giữa và tạo khoảng cách dưới */
+  border: 1px solid #333;
+}
+
+.chat-header {
+  background-color: #252526;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.chat-header h2 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.chat-header h2 i {
+  color: #4daaf9;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: #4caf50;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.message {
+  display: flex;
+  max-width: 80%;
+}
+
+.message-content {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.ai-message {
+  align-self: flex-start;
+}
+.ai-message .message-content {
+  background-color: #2d2d30;
+  color: #e0e0e0;
+  border-bottom-left-radius: 4px;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+.user-message .message-content {
+  background-color: #0b5cff;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 15px;
+  background-color: #252526;
+  border-top: 1px solid #333;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 25px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: border 0.3s;
+}
+
+#user-input:focus {
+  border-color: #0b5cff;
+}
+
+#send-btn {
+  background-color: #0b5cff;
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background-color 0.3s,
+    transform 0.1s;
+}
+
+#send-btn:hover {
+  background-color: #0046d6;
+}
+
+#send-btn:active {
+  transform: scale(0.95);
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  padding: 15px 20px;
+  background-color: #2d2d30;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  width: fit-content;
+  align-self: flex-start;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background-color: #888;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.header-logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  object-fit: contain;
+}
+
+/* APP NAVBAR & LOGOUT BUTTON */
+.app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding-right: calc(100vw - 100%);
+  z-index: 1000;
+}
+
+/* Đã xóa class .scrolled vì body không scroll được */
+
+.app-navbar .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-navbar .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.app-navbar .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-greeting {
+  color: #9e9e9e;
+  font-size: 0.95rem;
+}
+
+.user-greeting strong {
+  color: #e0e0e0;
+}
+
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #252526;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background-color: #333;
+  border-color: #555;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* BACKGROUND GLOWS */
+.bg-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--primary-color);
+  filter: blur(150px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.glow-top-left {
+  top: -200px;
+  left: -200px;
+}
+
+.glow-bottom-right {
+  bottom: -200px;
+  right: -200px;
+  background: var(--secondary-color);
+}
+
+/* NAVBAR LINKS */
+.app-navbar .nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.app-navbar .nav-links a {
+  color: #9e9e9e;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.app-navbar .nav-links a:hover {
+  color: #fff;
+}
+
+/* Default cho nút menu ẩn ở màn hình to */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive cơ bản cho màn hình nhỏ */
+@media (max-width: 768px) {
+  .app-navbar .nav-links,
+  .user-greeting {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Sạch sẽ hơn thay vì dùng !important */
+  }
+}
